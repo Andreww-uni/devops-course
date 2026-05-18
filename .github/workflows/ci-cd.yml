@@ -25,8 +25,8 @@ jobs:
         run: pip install ansible ansible-lint
 
       - name: Check Ansible syntax
-        working-directory: training-project
-        run: cd ansible && ansible-playbook playbook.yml --syntax-check
+        working-directory: training-project/ansible
+        run: ansible-playbook playbook.yml --syntax-check
 
       - name: Run ansible-lint
         run: ansible-lint --profile min training-project/ansible/playbook.yml
